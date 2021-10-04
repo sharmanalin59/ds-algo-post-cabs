@@ -22,7 +22,7 @@ public class DocumentService implements IDocumentService {
     Map<Long, Map<Long, DocumentUser>> docUsersPermission = new HashMap<>();
 
     String fileName = "doc_";
-    String absolutePath = "/Users/nalinsharma/ola/nalin/src/main/java/razor/pay/doc";
+    String absolutePath = "/Users/nalinsharma/name/nalin/src/main/java/razor/pay/doc";
 
     @Override
     public Document view(long userId, String docName) {
