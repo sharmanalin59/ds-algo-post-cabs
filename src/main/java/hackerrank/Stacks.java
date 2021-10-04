@@ -7,26 +7,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Stacks {
-    static void connection() throws IOException {
-        URL url = new URL("https://hr-testcases-us-east-1.s3.amazonaws.com/33183/input02.txt?AWSAccessKeyId=AKIAR6O7GJNX5DNFO3PV&Expires=1619477602&Signature=8CqyxFgOS84faruM2F7d0%2FDqscw%3D&response-content-type=text%2Fplain");
-        URLConnection conn = url.openConnection();
-        InputStream is = conn.getInputStream();
-        String result = new BufferedReader(new InputStreamReader(is))
-                .lines().collect(Collectors.joining("\n"));
-        System.out.println(result);
-
-
-        URL oUrl = new URL("https://hr-testcases-us-east-1.s3.amazonaws.com/33183/output02.txt?AWSAccessKeyId=AKIAR6O7GJNX5DNFO3PV&Expires=1619477617&Signature=4%2FCUxJJNlJJYzGGsDRFVxMzYVIY%3D&response-content-type=text%2Fplain");
-        URLConnection oConn = oUrl.openConnection();
-        InputStream oIs = oConn.getInputStream();
-        String outputResult = new BufferedReader(new InputStreamReader(oIs))
-                .lines().collect(Collectors.joining("\n"));
-        System.out.println(outputResult);
-
-        check_tests(result,outputResult);
-
-    }
-
     static List<Integer> convert(String... list) {
         List<Integer> l = new LinkedList<>();
         for(int i = 0; i < list.length; i++) {
