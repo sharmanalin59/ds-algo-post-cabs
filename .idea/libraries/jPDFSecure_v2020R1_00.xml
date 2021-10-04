@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jPDFSecure.v2020R1.00">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/jPDFSecure.v2020R1.00.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

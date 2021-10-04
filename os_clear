@@ -1,0 +1,29 @@
+for crn in ; 
+do
+curl -X POST \
+  http://krakatoa-9111a.corp.olacabs.com/v1/corporate/payment/clearOS \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: f4b960eb-79a0-7f21-5300-966bbdad7f0c' \
+  -H 'x-tenant: 64a8b140-7cd8-4a6a-88d8-768b2ded1439' \
+  -d '{
+	"additional_info":
+	{
+		"source":"corporate"
+	},
+	"unique_request_id":uuidgen,
+	"transactions":[{
+			"id":"$crn"
+		}],
+	"intent":"PAYMENT",
+	"entity":
+	{
+	"type":"corp",
+	"entity_id":68848
+	},"command":"WAIVE_OS"
+}';
+
+echo sleeping
+ sleep .5
+done
+

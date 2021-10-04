@@ -1,0 +1,44 @@
+
+
+
+
+
+Hotel Reservation -> Book room like MMT
+
+DB scaling
+1. User can Book rooms(in advance)
+
+Hotel -
+String name
+String description
+String address
+List<Rooms> avaialable
+List<Rooms> booked
+
+Room -
+id
+hotelId
+type[premium, ordinary]
+ratePerHour
+
+User
+id
+
+Reservation
+fromTime
+endTime
+roomIds
+hotelId
+userId
+
+Public endpoint Api-:
+
+/user/{user-id}/
+{
+hotel: {hotel-id}
+from:
+to:
+num_rooms:[premium,2,oridanry,3]
+}
+
+
