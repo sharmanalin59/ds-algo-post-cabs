@@ -24,6 +24,8 @@ public class AirBnb1 {
         int k, H = 8;
         int [] ans = {0};
 
+        /*int c = 1/0;
+        System.out.println(c);*/
         //Arrays.sort(arr, Collections.reverseOrder());
         candyPiles.sort(Collections.reverseOrder());
         System.out.print(numHours+" candies ");
