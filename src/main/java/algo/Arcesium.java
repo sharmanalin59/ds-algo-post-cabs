@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * @author nalin.sharma on 03/08/21
  */
-public class PP1 {
+public class Arcesium {
     enum Day {
         mon(1);
 
@@ -34,7 +34,7 @@ public class PP1 {
             String op = inputList.get(1);
             String matchKey1 ="", matchKey2 = "";
             boolean matchedKey1 = false, matchedKey2 = false;
-            if(inputList.get(0).indexOf(".") != -1) {
+            /*if(inputList.get(0).indexOf(".") != -1) {
                 String arr [] = inputList.get(0).split("\\.");
                 matchKey1 = arr[0];
                 matchedKey1 = false;
@@ -44,6 +44,20 @@ public class PP1 {
             else {
                 matchKey1 = inputList.get(0);
                 matchKey2 = "";
+            }*/
+            String arr [] = inputList.get(0).split("\\.");
+            if(arr.length == 1) {
+                matchKey2 = arr[0];
+                matchedKey1 = true;
+            }
+            else if(arr.length == 2) {
+                matchKey1 = arr[0];
+                matchKey2 = arr[1];
+            }
+
+            if(!op.equals("EQUALS") && !op.equals("IN")) {
+                out.add(-1);
+                return out;
             }
 
             Set<String> matchVal = new HashSet<>();
@@ -53,11 +67,11 @@ public class PP1 {
             }
             Integer curId = -1;
             while(((inputLine = br.readLine()) != null)) {
-                res.append(inputLine);
-                String [] str = inputLine.split(":");
                 if(inputLine.length() <5) {
                     continue;
                 }
+                res.append(inputLine);
+                String [] str = inputLine.split(":");
                 if(str[0].contains("\"id\"")) {
                     curId = Integer.parseInt(str[1]
                             .substring(0,str[1].length() - 1)
@@ -99,6 +113,10 @@ public class PP1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(apiResponseParser(Arrays.asList("address.city","IN","Bengaluru,Mumbai"), 3));
+        //System.out.println(apiResponseParser(Arrays.asList("address.city","IN","Bengaluru,Mumbai"), 3));
+
+        //System.out.println(apiResponseParser(Arrays.asList("username","EQUALS","vinayk"), 3));
+        System.out.println(apiResponseParser(Arrays.asList("address.city","EQUALS","Surat"), 3));
+        System.out.println(apiResponseParser(Arrays.asList("username","EQUALS","WilsonP"), 3));
     }
 }
