@@ -1,7 +1,5 @@
 package algo.sixt;
 
-import edu.emory.mathcs.backport.java.util.Collections;
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
